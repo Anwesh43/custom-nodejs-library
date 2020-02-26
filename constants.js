@@ -1,4 +1,5 @@
 module.exports = {
     SERVER : "redis-server",
-    CLIENT : "redis-cli"
+    CLIENT : "redis-cli",
+    LOG_FILE : "commandlogs"
 }

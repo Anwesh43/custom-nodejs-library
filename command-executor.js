@@ -7,8 +7,14 @@ class CommandExecutor  {
         this.childProcess = spawn(command, args)
     }
 
+    pipe(stream) {
+        stream.pipe(this.childProcess.stdin)
+    }
+
     writeToStdin(command) {
+        console.log(command)
         this.childProcess.stdin.write(command)
+
     }
 
     handleStdout(cb) {
@@ -18,8 +24,6 @@ class CommandExecutor  {
     }
 
     stop() {
-        console.log(this.childProcess)
-        console.log(this.childProcess.pid)
         this.childProcess.kill()
     }
 }
